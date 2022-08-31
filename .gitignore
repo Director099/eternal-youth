@@ -14,4 +14,3 @@ package-lock.json
 .idea
 ex_files
 Thumbs.db
-build/
