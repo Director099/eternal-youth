@@ -1,0 +1,32 @@
+.similar__title {
+  @include typo3(700);
+  padding-bottom: 16px;
+  margin: 0;
+  border-bottom: 1px solid $color-main;
+}
+
+.similar__list {
+  @include ul-none;
+}
+
+.similar__news {
+  padding: 32px 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.similar__news {
+  .news__tag {
+    color: $color-main;
+    margin-bottom: 12px;
+  }
+
+  .news__title {
+    margin-bottom: 8px;
+  }
+
+  .news__desc {
+    margin-bottom: 12px;
+  }
+}
+

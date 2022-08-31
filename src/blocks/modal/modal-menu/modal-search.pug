@@ -1,0 +1,14 @@
+mixin modal-search()
+  +modal({
+    id: 'modal-search',
+  }).modal-menu
+    +page-header(false, true).modal__header
+    .modal__body
+      +search-form().modal-menu__search-form
+      +tags-list({
+        title: 'Искать в статьях по темам:',
+        classTitle: 'tags-list__title--m-line',
+        tagLinkTag: 'a',
+        list: listTag,
+        length: maxTag
+      }).modal-menu__tag-list

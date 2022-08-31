@@ -1,0 +1,78 @@
+.btn-icon {
+  @include typo6;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin: 0;
+  padding: 9px 8px;
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+  text-transform: none;
+  color: #8390A0;
+  border: 1px solid $white;
+  background-color: $white;
+  background-image: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $text-color;
+    background-color: darken($white, 10%);
+    border-color: darken($white, 12%);
+  }
+
+  &--disabled,
+  &:disabled {
+    opacity: $opacity;
+    cursor: not-allowed;
+    color: $text-color;
+    background-color: $gray-lightest;
+    border-color: $gray-lighter;
+
+    @at-root a.btn--disabled {
+      pointer-events: none;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: 0;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  &--search svg {
+    stroke: $white;
+    fill: transparent;
+    stroke-width: 1.5px;
+  }
+
+  &--small {
+    padding: 5px;
+  }
+
+  &--lang {
+    color: $white;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+.btn-icon__icon-m-right {
+  margin-right: 27px;
+}

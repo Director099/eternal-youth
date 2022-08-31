@@ -1,0 +1,32 @@
+extends pug/layout.pug
+
+block globalVars
+  - const maxSidebarBannerLength = 3; // default
+  - const bannerTplList = bannerSidebar2; // default
+
+block meta
+  title Главная
+block header
+  +page-header(true)
+block main-content
+  +main-news
+block content
+  +tab-filter(listTabFilter).js-tab-filter
+    .grid-tpl.grid-tpl--2
+      - for(let i = 0; i < 7; i++)
+        +news({
+          tag: true,
+          text: 'В Америке человек вправе отказаться от реанимации, если он не хочет, чтобы врачи боролись за его жизнь если он не хочет, чтобы врачи боролись за его жизнь'
+        })(data-filter="news")
+      - for(let i = 0; i < 7; i++)
+        +news({
+          tag: true,
+          text: 'В Америке человек вправе отказаться от реанимации, если он не хочет, чтобы врачи боролись за его жизнь если он не хочет, чтобы врачи боролись за его жизнь'
+        })(data-filter="articles")
+  .main-content__btn-more
+    button.btn.btn--big(type="button") Показать еще
+
+block sidebar
+
+block footer
+  +page-footer()

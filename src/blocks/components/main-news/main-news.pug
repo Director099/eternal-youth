@@ -1,0 +1,14 @@
+mixin main-news()
+  .main-news
+    .container
+      .swiper.js-main-news
+        .swiper-wrapper
+          each item in listBanner
+            .swiper-slide
+              article.main-news__content
+                h2.title-main.main-news__title= item
+                .main-news__row
+                  span.main-news__data 08.08.2021
+                  .main-news__desc
+                    p Человек начинает развиваться с одной клетки. Накопленные в клетках же мутации приводят к старению, а значит, к возрастзависимым болезням и смерти.
+        .swiper-pagination

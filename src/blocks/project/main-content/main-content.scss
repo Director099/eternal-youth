@@ -1,0 +1,147 @@
+.main-content {
+  padding-top: 37px;
+  padding-bottom: 64px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 67px;
+    padding-bottom: 120px;
+  }
+}
+
+.main-content__wrap {
+  position: relative;
+
+  @media (max-width: $screen-xl - 1) {
+    margin-bottom: 61px;
+  }
+}
+
+.main-content__header-page {
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 32px;
+  }
+}
+
+.main-content__header-page--news {
+  @media (min-width: $screen-xl) {
+    position: relative;
+
+    .title-wrap__title {
+      display: none;
+    }
+
+    .title-wrap {
+      position: absolute;
+      top: 2px;
+      right: 0;
+    }
+  }
+}
+
+.main-content .tab-filter__row {
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 64px;
+  }
+}
+
+.main-content__form-send {
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 64px;
+  }
+}
+
+.main-content__tags-list {
+  margin-bottom: 34px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 44px;
+  }
+
+  .tags-list__title {
+    @include typoB3;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.main-content__title {
+  @include typo3(700);
+  //margin-bottom: 16px;
+  margin-bottom: 24px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 41px;
+  }
+}
+
+.main-content__pagination {
+  padding-top: 40px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 108px;
+  }
+}
+
+.main-content__btn-more {
+  padding-top: 40px;
+  text-align: center;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 120px;
+  }
+}
+
+.main-content__container {
+  width: 100%;
+
+  @media (min-width: $screen-xl) {
+    max-width: 668px;
+    margin-left: auto;
+    margin-right: 93px;
+  }
+}
+
+.main-content__data {
+  @include typo6;
+  color: #6B7788;
+  text-shadow: 0px 4px 37px rgba(255, 255, 255, 0.07);
+  @media (min-width: $screen-xl) {
+    position: absolute;
+    left: 0;
+    top: 4px;
+  }
+}
+
+.main-content__link-evt {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 40px;
+  }
+}
+
+.main-content__text-content {
+  margin-bottom: 40px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 72px;
+  }
+}
+
+.main-content__subscribe {
+  //margin-bottom: 64px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 112px;
+  }
+}

@@ -1,0 +1,23 @@
+mixin modal-menu()
+  +modal({
+    id: 'modal-menu',
+  }).modal-menu
+    +page-header(false, true).modal__header
+    .modal__body
+      .mb-nav.modal-menu__menu
+        ul.mb-nav__list
+          each item, i in nav
+            li.mb-nav__item(class= item.subMenu.length > 0 ? "js-submenu" : "")
+              a.mb-nav__link(href="#", class= item.subMenu.length > 0 ? "mb-nav__link--arrow" : '')= item.text
+              if (item.subMenu.length > 0)
+                ul.mb-nav__item-list
+                  each subMenu in item.subMenu
+                    li.mb-nav__item
+                      a.mb-nav__link(href="#")= subMenu.text
+                      if (subMenu.subSubMenu.length > 0)
+                        ul.mb-nav__item-list
+                          each subSubMenu in subMenu.subSubMenu
+                            li.mb-nav__item
+                              a.mb-nav__link(href="#")= subSubMenu.text
+      +search-form().modal-menu__search-form
+

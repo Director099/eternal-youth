@@ -1,0 +1,52 @@
+.tab-filter__row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E1E5F0;
+}
+
+.tab-filter__list {
+  @include ul-none;
+  display: flex;
+  gap: 5px;
+}
+
+.tab-filter__item:first-child .tab-filter__btn {
+  padding-left: 0;
+}
+
+.tab-filter__btn {
+  @include typoB5;
+  position: relative;
+  display: block;
+  padding: 7px 15px 15px;
+  text-decoration: none;
+  color: inherit;
+
+  &--all {
+    padding-right: 0;
+    padding-left: 0;
+
+    svg {
+      margin-left: 24px;
+    }
+  }
+
+  &.active {
+    color: $color-main;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $color-main;
+    }
+  }
+}
+
+.tab-filter__btn-more {
+  padding-top: 120px;
+  text-align: center;
+}

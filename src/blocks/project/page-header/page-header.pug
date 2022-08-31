@@ -1,0 +1,28 @@
+mixin page-header(main, modalHeader = false)
+  header.page-header&attributes(attributes)(class= main ? "page-header--main" : "")
+    .container
+      .page-header__row
+        +logo('/')
+          img(src='img/content/logo.svg', alt='Вечная молодость', width='209', height='49')
+        if (!modalHeader)
+          blockquote.page-header__blockquote
+            .page-header__blockquote-wrap
+              p “Лучший способ предсказать будущее - это изобрести его”
+            cite.page-header__cite Алан кей
+          .page-header__right.d-none.d-xl-flex
+            +navigation
+            a.btn-icon.btn-icon--small.btn-icon--transparent.btn-icon--lang(href="#") EN
+            +search-form().page-header__search
+        .page-header__right.d-xl-none
+          if (!modalHeader)
+            ul.page-header__list-icon
+              li.page-header__list-item-icon
+                a.btn-icon.btn-icon--small.btn-icon--transparent.btn-icon--lang(href="#") EN
+              li.page-header__list-item-icon
+                button.btn-icon.btn-icon--search.btn-icon--transparent.btn-icon--small(type="button" data-fancybox="" data-src="#modal-search")
+                  svg(width="14", height="14")
+                    use(href="img/symbols.svg#icon-search")
+          if (!modalHeader)
+            +burger('Открыть меню')(data-fancybox="" data-src="#modal-menu").d-xl-none
+          else
+            +burger('Закрыть меню')(data-fancybox-close="").burger--close.d-xl-none

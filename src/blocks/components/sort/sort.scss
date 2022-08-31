@@ -1,0 +1,17 @@
+.sort__list {
+  @include ul-none;
+  display: flex;
+  gap: 16px;
+}
+
+.sort__link {
+  display: block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
+
+  &.active {
+    border-color: $color-main;
+  }
+}

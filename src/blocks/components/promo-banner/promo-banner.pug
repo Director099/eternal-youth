@@ -1,0 +1,8 @@
+mixin promo-banner({list = bannerSidebar1, length})
+  if (length !== 0)
+    ul.promo-banner
+      each item, i in list
+        if(i < length)
+          li.promo-banner__item
+            a.promo-banner__link(href="#")
+              img.promo-banner__img(src=`img/promo/${item}`, alt="promo-banner")

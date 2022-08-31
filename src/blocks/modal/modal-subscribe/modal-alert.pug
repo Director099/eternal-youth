@@ -1,0 +1,9 @@
+mixin modal-alert
+  +modal({
+      id: 'modal-alert',
+  }).modal-subscribe
+    .modal__body.modal-subscribe__center
+      h3.modal-subscribe__title Письмо в редакцию
+      .modal-subscribe__desc.modal-subscribe__m-0
+        p В редакцию можно написать по адресу:
+        a.modal-subscribe__link(href="mailto:vm@vechnayamolodost.ru" target="_blank") vm@vechnayamolodost.ru

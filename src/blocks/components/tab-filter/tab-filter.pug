@@ -1,0 +1,11 @@
+mixin tab-filter(list)
+  .tab-filter&attributes(attributes)
+    .tab-filter__row
+      ul.tab-filter__list
+        each item in list
+          li.tab-filter__item
+            a.tab-filter__btn(class= `${item.active ? 'active' : ''}` data-btn-filter= item.filter)= item.text
+      a(href="all-article.html").tab-filter__btn.tab-filter__btn--all.d-none.d-xl-block Все статьи
+        svg(width="37", height="8")
+          use(href="img/symbols.svg#icon-arrow")
+    block

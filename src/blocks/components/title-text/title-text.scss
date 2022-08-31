@@ -1,0 +1,36 @@
+//.title-small {
+//  font-weight: 500;
+//  font-size: 17px;
+//  line-height: 22px;
+//}
+//
+//.title-normal {
+//  font-size: 20px;
+//  line-height: 24px;
+//  font-weight: 600;
+//
+//  @media (min-width: $screen-xl) {
+//    font-size: 24px;
+//    line-height: 29px;
+//  }
+//}
+
+.title-normal {
+  @include typoB3;
+}
+
+.title-big {
+  @include typo4(700);
+
+  @media (min-width: $screen-xl) {
+    @include typo3(700)
+  }
+}
+
+.title-main {
+  @include typo3(700);
+
+  @media (min-width: $screen-xl) {
+    @include typo2(700);
+  }
+}

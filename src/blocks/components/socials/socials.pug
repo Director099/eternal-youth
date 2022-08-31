@@ -1,0 +1,7 @@
+mixin socials()
+  ul.socials&attributes(attributes)
+    each item in socials
+      li.socials__item
+        a.socials__link(target="_blank", href=item.href)
+          svg(width="24", height="24")
+            use(href=item.src)

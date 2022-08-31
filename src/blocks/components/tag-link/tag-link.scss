@@ -1,0 +1,17 @@
+.tag-link {
+  @include typo7;
+  display: inline-block;
+  font-family: $font-family;
+  padding: 7px 20px;
+  color: rgba(#2D3D4F, 0.6);
+  background: #EBEDF3;
+  border: 1px solid #E1E5F0;
+  border-radius: 6px;
+  transition: $time;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background: #E1E5F0;
+  }
+}

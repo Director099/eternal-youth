@@ -1,0 +1,18 @@
+.title-wrap {
+  position: relative;
+
+  @media (min-width: $screen-xl) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+.title-wrap__title {
+  margin-bottom: 24px;
+
+  @media (min-width: $screen-xl) {
+    margin: 0;
+  }
+}

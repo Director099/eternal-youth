@@ -1,0 +1,32 @@
+mixin tags-list({list, tagLinkTag, title, classTitle, length = 16})
+  mixin TagLinkTemplate({ text, className, attrs })
+    if tagLinkTag === 'span'
+      span.tags-list__link.tag-link(class= className)&attributes(attrs)!= text
+
+    else if tagLinkTag === 'a'
+      a.tags-list__link.tag-link(class= className href="search-tag.html")&attributes(attrs)!= text
+
+    else if tagLinkTag === 'checkbox'
+      label.tags-list__label
+        input.tags-list__input(type="checkbox")&attributes(attrs)
+        span.tags-list__link.tag-link(class= className)!= text
+
+    else if tagLinkTag === 'radio'
+      label.tags-list__label
+        input.tags-list__input(type="radio")&attributes(attrs)
+        span.tags-list__link.tag-link(class= className)!= text
+
+    else
+      div.tags-list__link.tag-link(class= className)&attributes(attrs)!= text
+
+  if(length > 0)
+    .tags-list&attributes(attributes)
+      if (title)
+        h2.tags-list__title(class=classTitle)= title
+      ul.tags-list__list
+        each item, i in list
+          if (i < length)
+            li.tags-list__item
+              - const { text, attrs, className } = item
+
+                +TagLinkTemplate({text, className, attrs})

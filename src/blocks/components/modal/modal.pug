@@ -1,0 +1,35 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modal)
+
+mixin modal({id, title, header, tpl})
+
+  //- Принимает:
+  //-   id      {string} - идентификатор
+  //-   title   {string} - заголовок
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal('modal-demo-01', 'Заголовок', 'some')
+          .modal__body
+            p Текст
+          .modal__footer
+            button.btn(type='button', data-dismiss='modal') Закрыть
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' modal--' + modsList[i].trim();
+      }
+    }
+
+  .modal(id=id, tabindex='-1', role='dialog')&attributes(attributes)
+    .modal__dialog(role='document')
+      .modal__content
+        if (header)
+          .modal__header
+            span.close.modal__close.modal__close--arrow(data-fancybox-close="", aria-label='Закрыть') #[span]
+            if (title)
+              h4.text-h1.modal__title!= title
+            !=tpl
+        block

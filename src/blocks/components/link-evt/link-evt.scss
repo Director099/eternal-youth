@@ -1,0 +1,25 @@
+.link-evt {
+  @include typo7;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #6B7788;
+  padding: 0;
+  border: 0;
+
+  &:not([href]) {
+    cursor: inherit;
+  }
+
+  svg {
+    color: currentColor;
+  }
+}
+
+.link-evt__m-right {
+  margin-right: 8px;
+}
+
+.link-evt__m-left {
+  margin-left: 8px;
+}

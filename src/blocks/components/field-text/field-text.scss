@@ -1,0 +1,108 @@
+// В этом файле должны быть стили для БЭМ-блока field-text, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$gray-lighter:                hsl(0, 0%, 80%) !default;
+$border-color:                hsl(0, 0%, 60%) !default;
+
+$text-color--muted:           hsl(0, 0%, 50%) !default;
+
+$line-height:                 1.5 !default;
+
+$field-padding-vertical:      0.3em !default;
+$field-padding-horizontal:    0.7em !default;
+
+$border-radius:              3px !default;
+
+.field-text {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: block;
+  margin-bottom: 1rem;
+
+  &__name {
+    //@include field-name;
+  }
+
+  &__input-wrap {
+    display: block;
+  }
+
+  &__input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    // height: 2.125em;
+    padding: $field-padding-vertical  $field-padding-horizontal;
+    margin: 0;
+    line-height: $line-height;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    appearance: textfield;
+
+    &:focus {
+      @include field-focus;
+    }
+
+    &[disabled],
+    &[readonly] {
+      cursor: default;
+      background-color: $gray-lighter;
+    }
+
+    &[type='search']::-webkit-search-cancel-button,
+    &[type='search']::-webkit-search-decoration {
+      -webkit-appearance: none; // stylelint-disable-line  property-no-vendor-prefix
+    }
+
+    &[type='number']::-webkit-inner-spin-button,
+    &[type='number']::-webkit-outer-spin-button {
+      // height: auto;
+    }
+
+    &[type='color'] {
+      // max-width: 100px;
+      padding: 0;
+    }
+
+    &::placeholder {
+      color: $text-color--muted;
+      opacity: 1;
+    }
+
+    @at-root textarea#{&} {
+      $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);
+
+      height: auto;
+      min-height: calc(#{$textarea-height} + 2px);
+      resize: vertical;
+    }
+  }
+
+  &__help-text {
+    //@include field-help-text;
+  }
+}
+
+.field-text__message {
+  @include typo7;
+  display: none;
+  position: relative;
+  padding-left: 24px;
+  margin-top: 9px;
+  color: #DF2323;
+
+  &::after {
+    content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.17773 14C11.4914 14 14.1777 11.3137 14.1777 8C14.1777 4.68629 11.4914 2 8.17773 2C4.86403 2 2.17773 4.68629 2.17773 8C2.17773 11.3137 4.86403 14 8.17773 14Z' stroke='%23DF2323' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.17773 5.3335V8.00016M8.17773 10.6668H8.1844' stroke='%23DF2323' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+}

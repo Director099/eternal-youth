@@ -1,0 +1,20 @@
+.socials {
+  @include ul-none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  @media (min-width: $screen-xl) {
+    gap: 40px;
+  }
+}
+
+.socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  background-color: rgba($white, 0.1);
+}

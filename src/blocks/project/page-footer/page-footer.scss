@@ -1,0 +1,111 @@
+.page-footer {
+  @include typo4;
+  background: #060B1F;
+}
+
+.page-footer__main-content {
+  padding-top: 40px;
+  padding-bottom: 42px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 71px;
+    padding-bottom: 119px;
+  }
+}
+
+.page-footer__row-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 788px;
+}
+
+.page-footer__nav-list {
+  @include ul-none;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 24px;
+}
+
+.page-footer__nav-link {
+  color: $white;
+  text-decoration: none;
+}
+
+.page-footer__socials {
+  margin-bottom: 32px;
+
+  @media (min-width: $screen-xl) {
+    display: flex;
+    gap: 33px;
+  }
+}
+
+.page-footer__socials-lf {
+  flex-grow: 1;
+
+  a {
+    display: block;
+    height: 42px;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  @media (max-width: $screen-xl - 1) {
+    margin-top: 32px;
+  }
+}
+
+.page-footer__btn-email {
+  background: rgba($white, 0.1);
+  border: 1px solid rgba($white, 0.1);
+  margin-bottom: 45px;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, 0.1);
+    border: 1px solid rgba($white, 0.1);
+    color: #8390a0;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 38px;
+  }
+}
+
+.page-footer__copyright {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: #11192E;
+  color: #A5B0BD;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+}
+
+.page-footer__copyright-list {
+  @include ul-none;
+  @include typo6;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  @media (min-width: $screen-xl) {
+    display: flex;
+    justify-content: space-between;
+  }
+}

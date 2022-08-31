@@ -1,0 +1,10 @@
+mixin similar
+  .similar.d-none.d-xl-block&attributes(attributes)
+    h3.similar__title Статьи по теме
+    ul.similar__list
+      - for(let i = 0; i < 4; i++)
+        li.similar__item
+          +news({
+            tag: true,
+            text: 'Специально разработанные пробиотические бактерии делают раковые клетки уязвимыми для иммунотерапии.'
+          }).similar__news

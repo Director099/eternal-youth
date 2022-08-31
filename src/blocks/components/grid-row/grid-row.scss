@@ -1,0 +1,151 @@
+.grid-row {
+  @include row(30px, 30px, 30px, 30px, 30px);
+
+  &--sb {
+    justify-content: space-between;
+  }
+
+  @media (min-width: $screen-xl) {
+    &--xl-reverce {
+      flex-direction: row-reverse;
+    }
+
+    &--xl-center {
+      align-items: center;
+    }
+
+    &--xl-mb40 .grid-row__col {
+      margin-bottom: 40px;
+    }
+
+    &__xl-ml-a {
+      margin-left: auto;
+    }
+  }
+}
+
+.grid-row__col {
+  @include make-col(12, 12, 30px);
+  //margin-bottom: 30px;
+  &--auto {
+    flex-basis: auto;
+  }
+
+  &--12 {
+    @include make-col(12, 12, 30px);
+  }
+
+  &--6 {
+    @include make-col(6, 12, 30px);
+  }
+
+  &--4 {
+    @include make-col(4, 12, 30px);
+  }
+
+  &--xl-1 {
+    @include col(xl, 1, 12, 30px);
+  }
+
+  &--xl-2 {
+    @include col(xl, 2, 12, 30px);
+  }
+
+  &--xl-3 {
+    @include col(xl, 3, 12, 30px);
+  }
+
+  &--xl-4 {
+    @include col(xl, 4, 12, 30px);
+  }
+
+  &--xl-5 {
+    @include col(xl, 5, 12, 30px);
+  }
+
+  &--xl-6 {
+    @include col(xl, 6, 12, 30px);
+  }
+
+  &--xl-7 {
+    @include col(xl, 7, 12, 30px);
+  }
+
+  &--xl-8 {
+    @include col(xl, 8, 12, 30px);
+  }
+
+  &--xl-9 {
+    @include col(xl, 9, 12, 30px);
+  }
+
+  &--xl-10 {
+    @include col(xl, 10, 12, 30px);
+  }
+
+  &--xl-11 {
+    @include col(xl, 11, 12, 30px);
+  }
+
+  &--xl-2_9 {
+    @include col(xl, 2.9, 12, 30px);
+  }
+
+  &--xl-9_1 {
+    @include col(xl, 9.1, 12, 30px);
+  }
+
+  &--xl-auto {
+    @media (min-width: $screen-xl) {
+      flex-basis: auto;
+    }
+  }
+}
+
+.grid-tpl {
+  display: grid;
+  grid-template-columns: 100%;
+
+  @media (min-width: $screen-xl) {
+    grid-gap: 28px 24px;
+  }
+
+  &--sidebar {
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 288px;
+    }
+  }
+
+  &--1 {
+    grid-gap: 16px;
+
+    @media (min-width: $screen-xl) {
+      grid-gap: 28px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &--2 {
+    grid-gap: 16px;
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &--3 {
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &--4 {
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &--ai-s {
+    align-items: flex-start;
+  }
+}

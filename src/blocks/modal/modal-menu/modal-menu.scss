@@ -1,0 +1,42 @@
+.modal-menu {
+  position: fixed;
+  padding: 0;
+  background-color: transparent;
+
+  .modal__dialog {
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal__content {
+    height: 100%;
+    background-color: #212C36;
+  }
+
+  .modal__body {
+    height: 100%;
+    overflow: auto;
+  }
+
+  .modal__header {
+    //position: sticky;
+    //top: 0;
+    //left: 0;
+    //right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.modal-menu__menu {
+  margin-bottom: 32px;
+}
+
+.modal-menu__search-form {
+  margin-bottom: 24px;
+}
+
+.modal-menu__tag-list {
+  .tags-list__title {
+    color:  $white;
+  }
+}

@@ -1,0 +1,38 @@
+mixin page-footer()
+  footer.page-footer
+    .page-footer__main-content
+      .container
+        .grid-row
+          .grid-row__col.grid-row__col--xl-7.d-none.d-xl-block
+            .page-footer__row-nav
+              each item in footerNav
+                ul.page-footer__nav-list
+                  each elem in item
+                    li.page-footer__nav-item
+                      a.page-footer__nav-link(href="#")= elem
+          .grid-row__col.grid-row__col--xl-5
+            .page-footer__socials
+              +socials()
+              .page-footer__socials-lf
+                script.
+                  // <![CDATA[
+                  document.write("<a href='http://www.liveinternet.ru/click' " +
+                    "target=_blank><img src='http://counter.yadro.ru/hit?t16.2;r" +
+                    escape(document.referrer) + ((typeof (screen) == "undefined") ? "" :
+                        ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+                        screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+                    ";" + Math.random() +
+                    "' alt='' title='LiveInternet: показано число просмотров за 24" +
+                    " часа, посетителей за 24 часа и за сегодня' " +
+                    "border=0 width=88 height=31 vspace=10><\/a>")
+                  // ]]>
+            button.btn-icon.btn-icon--full.page-footer__btn-email(data-fancybox="" data-src="#modal-subscribe") Оставьте ваш email
+              svg.btn-icon__icon-m-right(width="37", height="8")
+                use(href="img/symbols.svg#icon-arrow")
+            +partners().page-footer__partners
+    .page-footer__copyright
+      .container
+        ul.page-footer__copyright-list
+          each item in copyrightFooter
+            li.page-footer__copyright-item
+              p= item

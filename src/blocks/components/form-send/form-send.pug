@@ -1,0 +1,13 @@
+mixin form-send({title, btnClass, typeInput, btnText='Искать по этому запросу', inputAttr})
+  form.form-send&attributes(attributes)
+    if(title)
+      h3.form-send__title= title
+    .form-send__row
+      +field-text({
+        mods: '',
+        val: '',
+        attrs: inputAttr
+      }).form-send__field
+        span.field-text__message Поле заполнено не верно!
+      button.btn.btn--big.form-send__btn(class= btnClass)= btnText
+    block

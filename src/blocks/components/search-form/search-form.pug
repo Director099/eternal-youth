@@ -1,0 +1,12 @@
+mixin search-form()
+  form.search-form&attributes(attributes)
+    +field-text({
+      mods: '',
+      val: '',
+      attrs: {
+        placeholder: 'Введите запрос...'
+      }
+    }).search-form__field
+    button.search-form__btn
+      svg(width="14", height="14")
+        use(href="img/symbols.svg#icon-search")

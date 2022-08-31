@@ -1,0 +1,18 @@
+mixin navigation()
+  nav.navigation&attributes(attributes)
+    ul.navigation__list
+      each item, i in nav
+        li.navigation__item
+          a.navigation__link(href="#", class= item.current ? "active" : '')= item.text
+          if (item.subMenu.length > 0)
+            ul.navigation__item-list
+              each subMenu in item.subMenu
+                li.navigation__item
+                  a.navigation__link= subMenu.text
+                  ul.navigation__item-list
+                    li.navigation__item
+                      a.navigation__link Новое в геронтологии
+                    li.navigation__item
+                      a.navigation__link Продление молодости
+                    li.navigation__item
+                      a.navigation__link Теория старения

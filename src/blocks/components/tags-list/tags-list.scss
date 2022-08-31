@@ -1,0 +1,87 @@
+.tags-list--b-ident {
+  @media (min-width: $screen-xl) {
+    padding: 25px 16px 25px 25px;
+    border: 1px solid #E1E5F0;
+
+    .tags-list__list {
+      max-height: 346px;
+      overflow: auto;
+      margin-right: -7px;
+      margin-bottom: -25px;
+      padding-bottom: 25px;
+
+      //firefox
+      scrollbar-color: $color-main rgba(#E1E2F0, 0.5); /*Цвет скролла, цвет ползунка*/
+      scrollbar-width: thin; /*Толщина скролла thin, auto*/
+
+      //chrome/safary
+      &::-webkit-scrollbar-track {
+        background-color: rgba(#E1E2F0, 0.5); /*Цвет скролла*/
+        border-radius: 20px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 20px; /*Закругление ползунка*/
+        background-color: $color-main; /*Цвет ползунка*/
+      }
+      &::-webkit-scrollbar{
+        width: 5px;  /*Толщина скролла*/
+      }
+    }
+  }
+}
+
+.tags-list__title {
+  @include typoB3;
+  margin-bottom: 32px;
+
+  @media (min-width: $screen-xl) {
+    @include typoB5;
+    margin-bottom: 20px;
+  }
+}
+
+.tags-list__title--m-line {
+  @media (max-width: $screen-xl - 1) {
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #E1E5F0;
+  }
+}
+
+.tags-list__list {
+  @include ul-none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 8px;
+
+  @media (min-width: $screen-xl) {
+    gap: 16px;
+  }
+}
+
+.tags-list__item {
+  flex-basis: auto;
+}
+
+.tags-list__label {
+  position: relative;
+}
+
+.tags-list__input {
+  position: absolute;
+  top: .7em;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.tags-list__input:checked + .tag-link {
+  background-color: $color-main;
+  color: $white;
+}
+
+.tags-list__link {
+  display: block;
+}

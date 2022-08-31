@@ -1,0 +1,35 @@
+extends pug/layout.pug
+
+block globalVars
+  - const maxTag = 0;
+  - const maxSidebarBannerLength = 3; // default
+
+block meta
+  title Поиск
+block header
+  +page-header()
+block main-content
+
+block inside-container
+  +breadcrumbs()
+    +breadcrumbs-item('Главная', 'index.html')
+    +breadcrumbs-item('Поиск')
+
+block content
+  .main-content__container
+    .main-content__header-page
+      h1.main-content__title Все материалы с тегом “жизнь”
+      +title-wrap
+    .grid-tpl.grid-tpl--1
+      - for(let i = 0; i < 8; i++)
+        +news({
+          breadcrumbs: true,
+          text: 'Китайские и американские <b>ученые</b> обнаружили еще одно вещество, которое способно убивать состарившиеся клетки в организме. Это процианидин C1, его много в виноградных косточках, но он также встречается в экстрактах корицы, какао и яблочной кожуре. Он оказался нетоксичен для здоровых клеток, а также продлил жизнь '
+        }).news--result-search
+    .main-content__btn-more
+      button.btn.btn--big(type="button") Показать еще
+
+block sidebar
+
+block footer
+  +page-footer()

@@ -1,0 +1,15 @@
+mixin news({tag, breadcrumbs, text, data = "24.09.2021", title = "Люди-киборги"})
+  article.news&attributes(attributes)
+    .news__wrap
+      if (tag)
+        span.news__tag Геронтология
+      if (breadcrumbs)
+        +breadcrumbs().news__breadcrumbs
+          +breadcrumbs-item('Главная', 'index.html')
+          +breadcrumbs-item('Статьи', '#')
+          +breadcrumbs-item('Ваше здоровье', '#')
+          +breadcrumbs-item('Сон и старение')
+    a.news__link(href="rubric.html")
+      h3.news__title= title
+      p.news__desc!= text
+      span.news__data= data

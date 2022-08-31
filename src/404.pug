@@ -1,0 +1,18 @@
+extends pug/layout.pug
+
+block globalVars
+  - const maxTag = 0;
+
+block meta
+  title Сраница не найдена
+block header
+  +page-header()
+block main-content
+
+block content
+  .main-content__header-page
+    h1.main-content__title Ошибка 404
+    p Неправильно набран адрес или такой страницы не существует
+  a.btn.btn--big.btn--main(href='index.html') На главную
+block footer
+  +page-footer()

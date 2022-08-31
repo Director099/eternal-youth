@@ -1,0 +1,39 @@
+extends pug/layout.pug
+
+block globalVars
+  - const maxSidebarBannerLength = 1; // default
+
+block meta
+  title Все статьи
+block header
+  +page-header()
+block main-content
+
+block inside-container
+  +breadcrumbs()
+    +breadcrumbs-item('Главная', 'index.html')
+    +breadcrumbs-item('Статьи')
+  .grid-tpl.grid-tpl--sidebar
+    .main-content__header-page.main-content__header-page--news
+      h1.main-content__title Статьи
+      +title-wrap
+block content
+  .grid-tpl.grid-tpl--2
+    - for(let i = 0; i < 14; i++)
+      +news({
+          tag: true,
+          text: 'В Америке человек вправе отказаться от реанимации, если он не хочет, чтобы врачи боролись за его жизнь если он не хочет, чтобы врачи боролись за его жизнь'
+      })
+  .main-content__pagination
+    +pagination().pagination--center
+      +pagination-item('1', '#')
+      +pagination-item('2', '#', true)
+      +pagination-item('3', '#')
+      +pagination-item('4', '#')
+      +pagination-item('5', '#')
+      +pagination-item('...')
+      +pagination-item('20', '#')
+block sidebar
+
+block footer
+  +page-footer()

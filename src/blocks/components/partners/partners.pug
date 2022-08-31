@@ -1,0 +1,6 @@
+mixin partners()
+  ul.partners&attributes(attributes)
+    each item in partners
+      li.partners__item
+        a.partners__link(target="_blank", href=item.href)
+          img(src=item.src alt=item.alt)

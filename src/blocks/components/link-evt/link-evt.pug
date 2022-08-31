@@ -1,0 +1,5 @@
+mixin link-evt({svg, text})
+  a.link-evt&attributes(attributes)
+    svg.link-evt__m-right(width="21", height="21")
+      use(href=`img/symbols.svg#${svg}`)
+    = text
