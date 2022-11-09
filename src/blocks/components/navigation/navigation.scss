@@ -8,6 +8,11 @@
 .navigation__item {
   position: relative;
 
+  & > .navigation__link:hover {
+    color: $white;
+    border-color: $color-main;
+  }
+
   &:hover {
     & > .navigation__item-list {
       visibility: visible;

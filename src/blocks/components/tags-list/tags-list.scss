@@ -61,6 +61,9 @@
 
 .tags-list__item {
   flex-basis: auto;
+  @media (min-width: $screen-xl) {
+    max-width: 240px;
+  }
 }
 
 .tags-list__label {
