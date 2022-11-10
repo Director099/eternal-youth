@@ -1,6 +1,10 @@
 mixin main-news()
   .main-news
     .container
+      blockquote.main-news__blockquote.d-xl-none
+        .main-news__blockquote-wrap
+          p “Лучший способ предсказать будущее - это изобрести его”
+        cite.main-news__cite Алан кей
       .swiper.js-main-news
         .swiper-wrapper
           each item in listBanner
